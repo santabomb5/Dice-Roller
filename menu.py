@@ -26,21 +26,33 @@ def menu():
             case '1':
                 print("coin")
             case '2':
-                print("d4")
+                dice_selection = app.dice_num()
+                result = app.roll_dice(4, dice_selection)
+                print(result)
             case '3':
-                dice_selection = int(input("How many dice would you like to roll? "))
+                dice_selection = app.dice_num()
                 result = app.roll_dice(6, dice_selection)
                 print(result)
             case '4':
-                print("d8")
+                dice_selection = app.dice_num()
+                result = app.roll_dice(8, dice_selection)
+                print(result)
             case '5':
-                print("d10")
+                dice_selection = app.dice_num()
+                result = app.roll_dice(10, dice_selection)
+                print(result)
             case '6':
-                print("d12")
+                dice_selection = app.dice_num()
+                result = app.roll_dice(12, dice_selection)
+                print(result)
             case '7':
-                print("d20")
+                dice_selection = app.dice_num()
+                result = app.roll_dice(20, dice_selection)
+                print(result)
             case '8':
-                print("d100")
+                dice_selection = app.dice_num()
+                result = app.roll_dice(100, dice_selection)
+                print(result)
             case '9':
                 print("percentile")
             case '0':

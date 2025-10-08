@@ -13,6 +13,8 @@
 import menu
 import random
 
+def dice_num():
+    return int(input("How many dice would you like to roll? "))
 
 def roll_dice(high, dice_num, low=1):
     dice_list = []
