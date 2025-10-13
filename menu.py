@@ -19,12 +19,13 @@ def menu():
         print("0. Exit the program")
         print("=" * 10)
     
-        dice_selection = 2
         menu_selection = input("Please select a number option from the list: ")
 
         match menu_selection:
             case '1':
-                print("coin")
+                coin_selection = app.coin_num()
+                result = app.coin_flip(coin_selection)
+                print(result)
             case '2':
                 dice_selection = app.dice_num()
                 result = app.roll_dice(4, dice_selection)
