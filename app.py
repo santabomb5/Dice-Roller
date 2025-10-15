@@ -1,13 +1,14 @@
-# Write a program that simulates rolling a pair of dice. Each time the program 
-# runs, it should randomly generate two numbers between 1 and 6 (inclusive), 
-# representing the result of each die. The program should then display the 
-# results and ask if the user would like to roll again.
-
-# Optional Enhancements
-# • Modify the program so the user can specify how many dice they want to roll.
-# • Add a feature that keeps track of how many times the user has rolled the 
-#   dice during the session. This will require a counter that increments each 
-#   time the dice are rolled.
+# Project title: Dice Roller
+# Name: Jackson A. Kelley
+# Email: jacksonkelley13@gmail.com
+# Url: https://github.com/santabomb5/Dice-Roller
+# Description: This program will allow you to roll a specified number and type of dice.
+#     The goal is to aid tabletop gamers with required dice rolls or decision making.
+#     The application can handle dice rolls from a range of d4 to d100. As well as
+#     support for coinflips and percentile dice rolls.
+# 
+# The eventual goal of this project is to produce an opensource mobile app that can
+# be used in any tabletop environment.
 
 
 import menu
@@ -36,6 +37,7 @@ def coin_flip(coin_num):
             coin_list.append(random.choice(choices))
         return tuple(coin_list)
 
+
 def roll_dice(high, dice_num, low=1):
     dice_list = []
 
@@ -48,6 +50,22 @@ def roll_dice(high, dice_num, low=1):
             dice_list.append(random.randint(low, high))
         return tuple(dice_list)
 
+
+def percentile():
+    dice_one = ["00", "10", "20", "30", "40", "50", "60", "70", "80", "90"]
+    dice_two = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+    digit_one = random.choice(dice_one)
+    digit_two = random.choice(dice_two)
+    percentage = int(digit_one) + int(digit_two)
+
+    # The result of percentile dice can only be non-zero
+    # so the result of a 00 combined with a 0 roll is 100%
+    if percentage == 0:
+        percentage = 100
+
+    return tuple([digit_one, digit_two, percentage])
+    
 
 if __name__ == "__main__":
     menu.menu()

@@ -1,3 +1,13 @@
+# Project title: Dice Roller
+# Name: Jackson A. Kelley
+# Email: jacksonkelley13@gmail.com
+# Url: https://github.com/santabomb5/Dice-Roller
+# Description: This program will allow you to roll a specified number and type of dice.
+#     The goal is to aid tabletop gamers with required dice rolls or decision making.
+#     The application can handle dice rolls from a range of d4 to d100. As well as
+#     support for coinflips and percentile dice rolls.
+
+
 import app
 
 
@@ -55,7 +65,8 @@ def menu():
                 result = app.roll_dice(100, dice_selection)
                 print(result)
             case '9':
-                print("percentile")
+                result = app.percentile()
+                print(f"Dice 1: {result[0]}\nDice 2: {result[1]}\nPercentage: {result[2]}%")
             case '0':
                 print("Exiting program now.\n")
                 break
