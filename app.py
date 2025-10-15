@@ -16,11 +16,19 @@ import random
 
 
 def dice_num():
-    return int(input("How many dice would you like to roll? "))
+    try:
+        num_choice = int(input("How many dice would you like to roll? "))
+    except ValueError:
+        num_choice = 0
+    return num_choice
 
 
 def coin_num():
-    return int(input("How many coins would you like to flip? "))
+    try:
+        num_choice = int(input("How many coins would you like to flip? "))
+    except ValueError:
+        num_choice = 0
+    return num_choice
 
 
 def coin_flip(coin_num):
